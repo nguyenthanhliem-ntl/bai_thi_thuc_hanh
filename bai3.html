@@ -8,23 +8,28 @@
 </head>
 <body>
     <script>
-        function isFibonacci() {
-            let c = parseInt(prompt("Nhap so luong ban can tim: "));
-                let a= 0;
-                let b = 1;
-                let temp =1;        
-            for(i = 0; i < c; i++) {
-                a = b;
-                b = temp;
-                temp= a+ b;                      
-            } 
-            if(c == temp) {
-                    return true;
-                }else{
-                    return false;
-                }
+        
+        let x = parseInt(prompt(''));
+        function isFibonacci(x) {        
+            let a = 1;
+            let b = 0;
+            let temp;
+            let check = true;
+        while (check == true){
+            temp = a;
+            a = a + b;
+            b = temp;
+            if((x == b) || (x == 0)){
+                return check;
+            }
+            else if((b > x) && (x != b)) {
+                check = false;
+                return false;
+            }
         }
-        document.write(isFibonacci());
+    }   ;
+    let test = isFibonacci(x);
+    alert(test);        
     </script>
 </body>
 </html>
